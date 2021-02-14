@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 
 const authenticate = require('../middleware/authenticate');
 
-router.post('/database/login', async(req, res, next) => {
+router.post('/sand-blue-crew.github.io/database/login', async(req, res, next) => {
 	var email = req.body.email;
 
     const user = await Cuentas.findOne({ Email: email }) 
@@ -25,29 +25,29 @@ router.get('/', (req, res) => {
     res.render("../index.html")
 });
 
-router.get('/database/login', (req, res) => {
+router.get('/sand-blue-crew.github.io/database/login', (req, res) => {
 	res.render('../signin')
 })
 
-router.get('/database/', (req, res) => {
+router.get('/sand-blue-crew.github.io/database/', (req, res) => {
 	res.render('../database/index2.html')
 });
 
-router.get('/database/detenciones/', (req, res) => {
+router.get('/sand-blue-crew.github.io/database/detenciones/', (req, res) => {
 	res.render('../database/detenciones.html')
 });
 
-router.get('/database/perfil/', (req, res) => {
+router.get('/sand-blue-crew.github.io/database/perfil/', (req, res) => {
 	res.render('../database/perfil.html')
 });
 
 // Detenciones
 
-router.get('/database/detenciones/add', (req, res) => {
+router.get('/sand-blue-crew.github.io/database/detenciones/add', (req, res) => {
 	res.render('../database/add-detenido.html')
 });
 
-router.post('/database/detenciones/add', (req, res) => {
+router.post('/sand-blue-crew.github.io/database/detenciones/add', (req, res) => {
 	let oficial = req.body.oficial;
 	if(!oficial) res.send('Falta el Oficial!')
 	let placa = req.body.placa;
@@ -104,7 +104,7 @@ router.post('/database/detenciones/add', (req, res) => {
 	})
 });
 
-router.post('/database/detenciones/', (req, res) => {
+router.post('/sand-blue-crew.github.io/database/detenciones/', (req, res) => {
 	let detenido = req.body.detenido;
 	console.log(detenido)
 	Detenidos.find({ Detenido: detenido }, (err, data) => {
